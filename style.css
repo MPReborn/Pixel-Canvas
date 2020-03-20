@@ -14,9 +14,12 @@ h1 {
   margin-top: 0;
 }
 
+h1,h2 {
+  text-align: center;
+}
+
 .headline {
   padding: 50px 0;
-  text-align: center;
 }
 
 .button {
@@ -38,4 +41,24 @@ h1 {
 .button:hover {
   color: white;
   background-color: Cornflowerblue;
+}
+
+.borderless-box {
+  margin: 50px 0;
+  display: block;
+}
+
+.text-box-left,
+.text-box-right {
+  float: left;
+  width: 40%;
+  padding: 30px;
+}
+
+.text-box-left {
+  float: left;
+}
+
+.text-box-right {
+  float: right;
 }
