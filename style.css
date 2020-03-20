@@ -1,3 +1,41 @@
 * {
   font-family: sans-serif;
 }
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: lightgrey;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.headline {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  background-color: lightblue;
+  padding: 10px 30px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 0px solid lightblue;
+  border-radius: 10px;
+}
+
+.button:link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  color: white;
+  background-color: Cornflowerblue;
+}
