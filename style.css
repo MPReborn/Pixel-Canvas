@@ -18,6 +18,13 @@ h1,h2 {
   text-align: center;
 }
 
+footer {
+  color: grey;
+  border-top: dashed 1px grey;
+}
+
+/* Classes ------------------ */
+
 .headline {
   padding: 50px 0;
 }
@@ -44,21 +51,117 @@ h1,h2 {
 }
 
 .borderless-box {
-  margin: 50px 0;
+  margin: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.small-box {
+  width: 800px;
+  max-width: calc(100% - 50px);
+  margin: 10px auto 10px;
   display: block;
 }
 
-.text-box-left,
-.text-box-right {
-  float: left;
+.column-2 {
   width: 40%;
-  padding: 30px;
+  height: 100%;
+  box-sizing: border-box;
+  float:left;
 }
 
-.text-box-left {
-  float: left;
+.column-2 img {
+  max-width: 100%;
+  max-height: 500px;
+}
+.column-2:last-child {
+  margin-left: 10%;
 }
 
-.text-box-right {
+.column-2:first-child {
+  margin-right: 10%;
+}
+
+.column-2 li {
+  font-size: 1.5rem;
+  padding: 20px 10px;
+  background-color: #ddd;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  list-style-position: inside;
+}
+
+.column-2 li:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: calc(100% + 20px); /* padding *2 */
+  height: 3px;
+  top: 29px;
+  margin: 0 -10px; /* negates padding */
+  background-color: lightgrey;
+  position: relative;
+}
+
+.column-2 li:nth-child(2n-1) {
+  background-color: #ccc;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+img[class="right-aligned"] {
   float: right;
+}
+
+/* Media Querries ------------------ */
+
+@Media (max-width: 1024px){
+  .column-2 {
+    width: 45%;
+  }
+
+  .column-2:last-child {
+    margin-left: 5%;
+  }
+
+  .column-2:first-child {
+    margin-right: 5%;
+  }
+}
+
+@Media (max-width: 768px) {
+  .borderless-box {
+    flex-direction: column;
+  }
+
+  .borderless-box .column-2 {
+    margin: 25px 0;
+    width: 100%;
+  }
+
+  .column-2 img {
+    float: none;
+    display: block;
+    margin: auto;
+  }
+}
+
+@Media (max-width: 540px) {
+  .borderless-box {
+    margin: 0 10px;
+  }
+
+  .column-2 li {
+    font-size: 1rem;
+  }
+}
+
+/* Float Clearfix ------------------ */
+
+.borderless-box:after,
+.small-box:after {
+  content: "";
+  display: table;
+  clear: both;
 }
