@@ -82,6 +82,10 @@ footer {
   margin-right: 10%;
 }
 
+.column-2 ol {
+  padding-left: 0px;
+}
+
 .column-2 li {
   font-size: 1.5rem;
   padding: 20px 10px;
@@ -133,6 +137,10 @@ img[class="right-aligned"] {
 @Media (max-width: 768px) {
   .borderless-box {
     flex-direction: column;
+  }
+
+  .small-order-reverse {
+    flex-direction: column-reverse;
   }
 
   .borderless-box .column-2 {
