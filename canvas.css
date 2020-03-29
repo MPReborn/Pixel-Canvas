@@ -8,9 +8,12 @@ body {
   flex-direction: row;
 }
 
-.canvas {
+#canvas {
   width: 100vh;
   height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .HUD {
@@ -20,12 +23,18 @@ body {
   color: white;
 }
 
+.pixel {
+  width: 10vh;
+  height: 10vh;
+  background-color: red;
+}
+
 @Media (max-aspect-ratio: 1/1) {
   body {
     flex-direction: column;
   }
 
-  .canvas {
+  #canvas {
     width: 100vw;
     height: 100vw;
   }
@@ -33,5 +42,10 @@ body {
   .HUD {
     width: 100vw;
     height: calc((100vh - 100vw) / 2);
+  }
+
+  .pixel {
+    width: 10vw;
+    height: 10vw;
   }
 }
